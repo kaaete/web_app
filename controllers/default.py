@@ -19,6 +19,14 @@ def index():
     response.flash = T("Hello World")
     return dict(message=T('Welcome to web2py!'))
 
+def team():
+    return locals()
+
+def about():
+    return locals()
+
+def contact():
+    return locals()
 
 def user():
     """

@@ -50,6 +50,13 @@ body {
   margin-bottom: 60px;
 }
 
+.map-page {
+  height: 150px;
+  background-color: #333;
+  margin-bottom: 60px;
+}
+
+
 /* Since positioning the image, we need to help out the caption */
 .map-caption {
   z-index: 10;
