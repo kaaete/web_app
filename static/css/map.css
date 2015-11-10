@@ -44,10 +44,18 @@ body {
   margin-bottom: 60px;
 }
 
+#map_container{
+  height: 500px;
+}
+
 .map-catalog {
   height: 350px;
   background-color: #333;
   margin-bottom: 60px;
+}
+
+#map_catalog_container{
+  height: 350px;
 }
 
 .map-page {
