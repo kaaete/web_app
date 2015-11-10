@@ -2,85 +2,22 @@
 
       <!-- Three columns of text below the map -->
       <div class="row">
+        {{for i in itens:}}
         <div class="col-lg-4">
           <div class="thumbnail">
-            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="300" height="150">
+            <img src="{{=URL(c='default', f='download', args=i.item_image)}}" alt="{{=i.item_popular_name}}" width="300" height="150">
             <div class="caption">
-              <h3>Nome Científico</h3>
-              <h4>Nomes populares</h4>
-              <p>Breve descrição da planta, localização, etc.</p>
+              <h3>{{=i.item_name}}</h3>
+              <h4>{{=i.item_popular_name}}</h4>
+              <p>{{=i.item_short_description}}</p>
               <p>
-                <a href="{{=URL(c='catalog', f='detail', args=0)}}" class="btn btn-primary">
+                <a href="{{=URL(c='catalog', f='detail', args=[i.id, i.item_slug])}}" class="btn btn-primary">
                   Mais Informações
                 </a>
               </p>
             </div>
           </div>
         </div>
-
-        <div class="col-lg-4">
-          <div class="thumbnail">
-            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="300" height="150">
-            <div class="caption">
-              <h3>Nome Científico</h3>
-              <h4>Nomes populares</h4>
-              <p>Breve descrição da planta, localização, etc.</p>
-              <p>
-                <a href="{{=URL(c='catalog', f='detail', args=0)}}" class="btn btn-primary">
-                  Mais Informações
-                </a>
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4">
-          <div class="thumbnail">
-            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="300" height="150">
-            <div class="caption">
-              <h3>Nome Científico</h3>
-              <h4>Nomes populares</h4>
-              <p>Breve descrição da planta, localização, etc.</p>
-              <p>
-                <a href="{{=URL(c='catalog', f='detail', args=0)}}" class="btn btn-primary">
-                  Mais Informações
-                </a>
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4">
-          <div class="thumbnail">
-            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="300" height="150">
-            <div class="caption">
-              <h3>Nome Científico</h3>
-              <h4>Nomes populares</h4>
-              <p>Breve descrição da planta, localização, etc.</p>
-              <p>
-                <a href="{{=URL(c='catalog', f='detail', args=0)}}" class="btn btn-primary">
-                  Mais Informações
-                </a>
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4">
-          <div class="thumbnail">
-            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="300" height="150">
-            <div class="caption">
-              <h3>Nome Científico</h3>
-              <h4>Nomes populares</h4>
-              <p>Breve descrição da planta, localização, etc.</p>
-              <p>
-                <a href="{{=URL(c='catalog', f='detail', args=0)}}" class="btn btn-primary">
-                  Mais Informações
-                </a>
-              </p>
-            </div>
-          </div>
-        </div>
-
+        {{pass}}
       </div><!-- /.row -->
 

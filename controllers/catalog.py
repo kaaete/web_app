@@ -9,6 +9,9 @@
 #########################################################################
 
 def detail():
+    item_id = request.args(0) or redirect(UR(c='default', f='index'))
+    item = db(db.item.id == item_id).select()
+
     return locals()
 
 

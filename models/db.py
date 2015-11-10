@@ -90,3 +90,25 @@ auth.settings.reset_password_requires_verification = True
 
 ## after defining tables, uncomment below to enable auditing
 # auth.enable_record_versioning(db)
+
+db.define_table('item',
+    Field('item_name'),
+    Field('item_lang', requires=IS_IN_SET([("pt-br", T("Brazilian Portuguese")), ("pt",T("Portuguese")), ("es", T("Spanish")), ("fr", T("French")), ("en-us", T("English (US)"))], zero=T("Select"))),
+    Field('item_popular_name'),
+    Field('item_short_description', 'text'),
+    Field('item_description', 'text'),
+    Field('item_use', 'text'),
+    Field('item_culinary_use', 'text'),
+    Field('item_nutritional_info', 'text'),
+    Field('item_image', 'upload'),
+    Field('item_slug', compute=lambda row: IS_SLUG()(row.item_name)[0]),
+    Field('item_root_id', "integer", default=0),
+    auth.signature
+    )
+
+db.define_table("item_location",
+    Field("item_location_address"),
+    Field("item_location_lat"),
+    Field("item_location_lng"),
+    auth.signature
+    )
