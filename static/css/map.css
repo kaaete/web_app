@@ -8,6 +8,24 @@ body {
 }
 
 
+/* BTN BAR
+-------------------------------------------------- */
+.btn-map{
+  margin-top: -150px;
+  z-index: 9999;
+  position: absolute;
+  margin-left: 425px;
+}
+
+.form-map{
+  margin-top: -410px;
+  z-index: 9999;
+  position: absolute;
+  margin-left: 850px;
+  background-color: #F39C12;
+  padding: 15px;
+}
+
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
 
