@@ -36,9 +36,7 @@
     <div role="tabpanel" class="tab-pane active" id="description">
         <div class="row">
             <div class="col-lg-4">
-              <div class="thumbnail">
-                <img src="{{=URL(c='default', f='download', args=i.item_image)}}" alt="{{=i.item_name}}" width="300" height="150">
-              </div>
+                <img src="{{=URL(c='default', f='download', args=i.item_image)}}" alt="{{=i.item_name}}">
             </div>
             <div class="col-lg-8">
                 {{=XML(i.item_description)}}
