@@ -14,4 +14,9 @@ def detail():
 
     return locals()
 
+def item_location_list():
+    itens = db(db.item.id > 0).select(orderby=db.item.item_name)
+
+    return locals()
+
 

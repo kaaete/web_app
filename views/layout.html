@@ -15,13 +15,14 @@
     <!-- map catalog -->
     <div class="map">
         <div id="map_container"></div>
-        <div class="form-map col-lg-4">
+        <div class="form-map form-inline col-lg-4">
             <form>
-                <input type="text" placeholder="{{=T('Type a location, like: New York, NY')}}" class="form-control">
+                <input type="text" placeholder="{{=T('Type a location, like: New York, NY')}}" class="form-control" id="search_location">
+                <button class="btn btn-default">{{=T("Go")}}</button>
             </form>
         </div>
         <div class="btn-map">
-            <a href="{{=URL(c='map', f='add_location')}}" class="btn btn-primary btn-map">{{=T('Add a plant location')}}</a>
+            <a href="{{=URL(c='catalog', f='item_location_list')}}" class="btn btn-primary btn-map">{{=T('Add a plant location')}}</a>
         </div>
     </div>
     <!-- /.map -->

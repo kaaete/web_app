@@ -19,7 +19,7 @@ body {
 
 .form-map{
   margin-top: -410px;
-  z-index: 9999;
+  z-index: 9998;
   position: absolute;
   margin-left: 850px;
   background-color: #F39C12;
