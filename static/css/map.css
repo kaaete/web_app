@@ -62,6 +62,12 @@ body {
   margin-bottom: 60px;
 }
 
+
+#add_point_map{
+  height: 300px;
+
+}
+
 #map_container{
   height: 500px;
 }

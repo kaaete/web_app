@@ -14,9 +14,18 @@ def detail():
 
     return locals()
 
-def item_location_list():
+def item_add_location_list():
     itens = db(db.item.id > 0).select(orderby=db.item.item_name)
 
     return locals()
 
+def add_location():
+    item_id = request.args(0) or redirect(UR(c='default', f='index'))
+    item = db(db.item.id == item_id).select()
+    form = crud.create(db.item_location,
+        message = T("Item location added with success."),
+        next = URL(c='catalog', f='detail', args=item_id)
+        )
+
+    return locals()
 
