@@ -12,6 +12,32 @@
             scrollwheel: false,
           });
 
+          var infoWindow = new google.maps.InfoWindow;
+
+          // get all locations of the item
+          //TODO: change to get only the region location itens
+          downloadUrl("{{=URL(c='geolocation', f='get_item_location.xml', vars={'item':request.args(0)} or 0, scheme=True, host=True)}}", function(data) {
+            var xml = data.responseXML;
+            var markers = xml.documentElement.getElementsByTagName("marker");
+            for (var i = 0; i < markers.length; i++) {
+              var name = markers[i].getAttribute("name");
+              var popular_name = markers[i].getAttribute("popular_name");
+              var address = markers[i].getAttribute("address");
+              var comment = markers[i].getAttribute("comment");
+              var photo = markers[i].getAttribute("photo");
+              var point = new google.maps.LatLng(
+                  parseFloat(markers[i].getAttribute("lat")),
+                  parseFloat(markers[i].getAttribute("lng")));
+              var html = "<img src='"+photo+"'><strong>" + name + "</strong> <br/><strong><i>"+popular_name+"</i></strong><br><i>" + address+"</i><br>"+comment;
+              var marker = new google.maps.Marker({
+                map: map,
+                position: point,
+                icon: "{{=URL('static', 'images/map_icon.png', scheme=True, host=True)}}"
+              });
+              bindInfoWindow(marker, map, infoWindow, html);
+            }
+          });
+
           // Try HTML5 geolocation.
           if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function(position) {

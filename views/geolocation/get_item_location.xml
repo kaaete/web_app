@@ -1,0 +1,22 @@
+<markers>
+{{response.headers['Content-Type']='text/xml'}}
+{{for i in itens:}}
+{{
+    if not i.item_location.photo:
+        item_photo = URL(c='default', f='download', args=i.item.item_image)
+    else:
+        item_photo = URL(c='default', f='download', args=i.item_location.photo)
+    pass
+}}
+<marker
+    name="{{=i.item.item_name}}"
+    popular_name="{{=i.item.item_popular_name}}"
+    address="{{=i.item_location.address}}"
+    lat="{{=i.item_location.lat}}"
+    lng="{{=i.item_location.lng}}"
+    comment="{{=i.item_location.location_comment}}"
+    photo="{{=item_photo}}"
+
+    />
+{{pass}}
+</markers>
