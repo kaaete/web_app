@@ -1,5 +1,4 @@
 <markers>
-{{response.headers['Content-Type']='text/xml'}}
 {{for i in itens:}}
 {{
     if not i.item_location.photo:
@@ -7,6 +6,8 @@
     else:
         item_photo = URL(c='default', f='download', args=i.item_location.photo)
     pass
+
+    link = URL(c='catalog', f='detail.html', args=i.item.id)
 }}
 <marker
     name="{{=i.item.item_name}}"
@@ -16,6 +17,7 @@
     lng="{{=i.item_location.lng}}"
     comment="{{=i.item_location.location_comment}}"
     photo="{{=item_photo}}"
+    link="{{=link}}"
     />
 {{pass}}
 </markers>

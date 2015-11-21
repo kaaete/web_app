@@ -17,6 +17,14 @@ body {
   margin-left: 425px;
 }
 
+.btn-map-catalog{
+  margin-top: 10px;
+  z-index: 9999;
+  position: absolute;
+  margin-left: 425px;
+}
+
+
 .form-map{
   margin-top: -410px;
   z-index: 9998;
