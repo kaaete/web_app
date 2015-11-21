@@ -124,3 +124,12 @@ db.define_table("item_location",
     Field("administrative_area_level_1"),
     auth.signature
     )
+
+db.define_table("recipe",
+    Field("item_id", "reference item"),
+    Field("recipe_content", "text"),
+    Field("recipe_image", "upload"),
+    Field("recipe_like"),
+    Field("recipe_dislike"),
+    auth.signature
+    )
