@@ -1,12 +1,21 @@
 $(function () {
     //index geolocation form
-    $("#search_location").geocomplete();
+    $("#search_location").geocomplete({
+        details: "form"
+    });
+
+    //search address
+    $("button.find").click(function(){
+      map.setCenter(new google.maps.LatLng( $("#find_lat").val(), $("#find_lng").val()));
+    });
+
 
     //add poit geolocation form
     $("#address").geocomplete({
         map: "#add_point_map",
         details: "form"
     });
+
 })
 
 

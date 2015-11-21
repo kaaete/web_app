@@ -69,8 +69,14 @@
         <div id="map_container"></div>
         <div class="form-map form-inline col-lg-4">
             <form>
-                <input type="text" placeholder="{{=T('Type a location, like: New York, NY')}}" class="form-control" id="search_location">
-                <button class="btn btn-default">{{=T("Go")}}</button>
+                <input type="text" placeholder="{{=T('Type a location, like: New York, NY')}}" class="form-control address" id="search_location">
+                <button class="btn btn-default find" type="button">{{=T("Go")}}</button>
+                <div class="hidden">
+                    <input name="lat" type="text" id="find_lat">
+                    <input name="lng" type="text" id="find_lng">
+                </div>
+
+
             </form>
         </div>
         <div class="btn-map">
