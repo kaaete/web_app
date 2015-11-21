@@ -48,9 +48,8 @@
               <ul class="nav navbar-nav">
                 <li {{if request.url == "/"+request.application+"/default/index":}}class="active"{{pass}}><a href="{{=URL(c='default', f='index')}}">{{=T("Home")}}</a></li>
                 <li {{if request.url == "/"+request.application+"/default/about":}}class="active"{{pass}}><a href="{{=URL(c='default', f='about')}}">{{=T("About")}}</a></li>
+                <li {{if request.url == "/"+request.application+"/default/ufp":}}class="active"{{pass}}><a href="{{=URL(c='default', f='ufp')}}">{{=T("What are UFP?")}}</a></li>
                 <li {{if request.url == "/"+request.application+"/default/contact":}}class="active"{{pass}}><a href="{{=URL(c='default', f='contact')}}">{{=T("Contact")}}</a></li>
-                <li {{if request.url == "/"+request.application+"/default/team":}}class="active"{{pass}}><a href="{{=URL(c='default', f='team')}}">{{=T("Team")}}</a></li>
-                <li {{if request.url == "/"+request.application+"/default/team":}}class="active"{{pass}}><a href="{{=URL(c='default', f='ufp')}}">{{=T("What are UFP?")}}</a></li>
               </ul>
             </div>
           </div>

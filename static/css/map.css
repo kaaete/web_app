@@ -11,7 +11,7 @@ body {
 /* BTN BAR
 -------------------------------------------------- */
 .btn-map{
-  margin-top: -150px;
+  margin-top: -110px;
   z-index: 9999;
   position: absolute;
   margin-left: 425px;
@@ -26,7 +26,7 @@ body {
 
 
 .form-map{
-  margin-top: -410px;
+  margin-top: -310px;
   z-index: 9998;
   position: absolute;
   margin-left: 850px;
@@ -65,9 +65,10 @@ body {
 
 /* map base class */
 .map {
-  height: 500px;
+  height: 400px;
   background-color: #333;
   margin-bottom: 60px;
+  margin-top: 65px;
 }
 
 
@@ -77,13 +78,15 @@ body {
 }
 
 #map_container{
-  height: 500px;
+  height: 400px;
 }
 
 .map-catalog {
   height: 350px;
   background-color: #333;
   margin-bottom: 60px;
+  margin-top: 65px;
+
 }
 
 #map_catalog_container{
