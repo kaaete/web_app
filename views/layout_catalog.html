@@ -28,7 +28,17 @@
               var point = new google.maps.LatLng(
                   parseFloat(markers[i].getAttribute("lat")),
                   parseFloat(markers[i].getAttribute("lng")));
-              var html = "<img src='"+photo+"'><strong>" + name + "</strong> <br/><strong><i>"+popular_name+"</i></strong><br><i>" + address+"</i><br>"+comment;
+              var html = "<div class='col-md-12'> \
+                          <div class='col-md-4'> \
+                          <img width='150' src='"+photo+"'> \
+                          </div> \
+                          <div class='col-md-8'> \
+                          <strong>" + name + " \
+                          </strong> <br/><strong><i>"+popular_name+" \
+                          </i></strong><br><i>" + address+"\
+                          </i><br>"+comment+" \
+                          </div> \
+                          </div>";
               var marker = new google.maps.Marker({
                 map: map,
                 position: point,

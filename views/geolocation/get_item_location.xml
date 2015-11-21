@@ -16,7 +16,6 @@
     lng="{{=i.item_location.lng}}"
     comment="{{=i.item_location.location_comment}}"
     photo="{{=item_photo}}"
-
     />
 {{pass}}
 </markers>
