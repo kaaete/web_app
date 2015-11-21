@@ -13,3 +13,8 @@ def get_item_location():
     itens = db((db.item.id == item_id)&(db.item_location.item_id == item_id)).select()
 
     return dict(itens=itens)
+
+def get_itens_location():
+    itens = db((db.item.id > 0)&(db.item_location.item_id == db.item.id)).select()
+
+    return dict(itens=itens)
