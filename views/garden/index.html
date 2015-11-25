@@ -1,0 +1,74 @@
+{{extend 'layout_page.html'}}
+
+<div class="page-header">
+  <h1><a href="{{=URL(c='garden', f='index')}}">{{=T("Your account")}}</a></h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+<hr>
+<div class="container">
+
+    <div class="row">
+      <div class="col-sm-3"><!--left col-->
+
+          <ul class="list-group">
+            <li class="list-group-item text-muted">{{=T("Profile")}}</li>
+            <li class="list-group-item text-right"><span class="pull-left"><a>{{=T("Edit Profile")}}</a></span> -></li>
+            <li class="list-group-item text-right"><span class="pull-left"><a>{{=T("Edit Data Access")}}</a></span> -></li>
+            <li class="list-group-item text-right"><span class="pull-left"><a>{{=T("Delete account")}}</a></span> -></li>
+          </ul>
+
+          <ul class="list-group">
+            <li class="list-group-item text-muted">{{=T("Activity")}} <i class="fa fa-dashboard fa-1x"></i></li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>{{=T("Recipies")}}</strong></span> 125</li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>{{=T("Points")}}</strong></span> 13</li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>{{=T("Likes")}}</strong></span> 37</li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>{{=T("Followers")}}</strong></span> 78</li>
+          </ul>
+
+       </div><!--/col-3-->
+      <div class="col-sm-9">
+
+          <ul class="nav nav-tabs" id="myTab">
+            <li class="active"><a href="#plants" data-toggle="tab">{{=T("Your Plants")}}</a></li>
+            <li><a href="#points" data-toggle="tab">{{=T("Your Points")}}</a></li>
+            <li><a href="#recipies" data-toggle="tab">{{=T("Your Recipies")}}</a></li>
+          </ul>
+
+          <div class="tab-content">
+            <div class="tab-pane active" id="plants">
+            <a href="{{=URL(c='garden', f='add_item')}}" class="btn btn-primary" style="float: right;">{{=T("Add new plant")}}</a>
+
+              <div class="table-responsive">
+                <table class="table table-hover">
+                  <tbody>
+                    {{for i in itens:}}
+                        <tr>
+                          <td>
+                            <a href="{{=URL(c='garden', f='edit_item', args=i.id)}}">
+                                {{=i.item_name}}
+                            </a>
+                          </td>
+                        </tr>
+                    {{pass}}
+                  </tbody>
+                </table>
+              </div>
+
+             </div><!--/tab-pane-->
+             <div class="tab-pane" id="poins">
+
+             </div><!--/tab-pane-->
+             <div class="tab-pane" id="recipies">
+             </div>
+
+              </div><!--/tab-pane-->
+          </div><!--/tab-content-->
+
+        </div><!--/col-9-->
+    </div><!--/row-->
+
+  </div>
+</div>
+

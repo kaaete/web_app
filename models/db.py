@@ -51,11 +51,12 @@ response.form_label_separator = myconf.take('forms.separator')
 ## (more options discussed in gluon/tools.py)
 #########################################################################
 
-from gluon.tools import Auth, Service, PluginManager
+from gluon.tools import Auth, Service, PluginManager, Crud
 
 auth = Auth(db)
 service = Service()
 plugins = PluginManager()
+crud = Crud(db)
 
 ## create all tables needed by auth if not custom tables
 auth.define_tables(username=False, signature=False)
@@ -107,8 +108,28 @@ db.define_table('item',
     )
 
 db.define_table("item_location",
-    Field("item_location_address"),
-    Field("item_location_lat"),
-    Field("item_location_lng"),
+    Field("item_id", "reference item"),
+    Field("address"),
+    Field("photo", "upload"),
+    Field("location_comment", "text"),
+    Field("lat"),
+    Field("lng"),
+    Field("formatted_address"),
+    Field("street_number"),
+    Field("postal_code"),
+    Field("locality"),
+    Field("sublocality"),
+    Field("country"),
+    Field("country_short"),
+    Field("administrative_area_level_1"),
+    auth.signature
+    )
+
+db.define_table("recipe",
+    Field("item_id", "reference item"),
+    Field("recipe_content", "text"),
+    Field("recipe_image", "upload"),
+    Field("recipe_like"),
+    Field("recipe_dislike"),
     auth.signature
     )

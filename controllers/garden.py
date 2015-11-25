@@ -8,6 +8,23 @@
 ## - download is for downloading files uploaded in the db (does streaming)
 #########################################################################
 
+
+def index():
+    itens = db(db.item.created_by == auth.user.id).select()
+
+    return locals()
+
+def edit_item():
+    item_id = request.args(0) or redirect(URL(c='garden', f='index'))
+    form = crud.update(db.item, item_id, next=URL(c='garden', f='index'))
+    return locals()
+
+
+def add_item():
+    form = crud.create(db.item, next=URL(c='garden', f='index'))
+    return locals()
+
+
 def detail():
     item_id = request.args(0) or redirect(UR(c='default', f='index'))
     item = db(db.item.id == item_id).select()

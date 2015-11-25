@@ -8,6 +8,32 @@ body {
 }
 
 
+/* BTN BAR
+-------------------------------------------------- */
+.btn-map{
+  margin-top: -110px;
+  z-index: 9999;
+  position: absolute;
+  margin-left: 425px;
+}
+
+.btn-map-catalog{
+  margin-top: 10px;
+  z-index: 9999;
+  position: absolute;
+  margin-left: 425px;
+}
+
+
+.form-map{
+  margin-top: -310px;
+  z-index: 9998;
+  position: absolute;
+  margin-left: 850px;
+  background-color: #F39C12;
+  padding: 15px;
+}
+
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
 
@@ -39,19 +65,28 @@ body {
 
 /* map base class */
 .map {
-  height: 500px;
+  height: 400px;
   background-color: #333;
   margin-bottom: 60px;
+  margin-top: 65px;
+}
+
+
+#add_point_map{
+  height: 300px;
+
 }
 
 #map_container{
-  height: 500px;
+  height: 400px;
 }
 
 .map-catalog {
   height: 350px;
   background-color: #333;
   margin-bottom: 60px;
+  margin-top: 65px;
+
 }
 
 #map_catalog_container{
@@ -59,7 +94,7 @@ body {
 }
 
 .map-page {
-  height: 150px;
+  height: 5px;
   background-color: #333;
   margin-bottom: 60px;
 }

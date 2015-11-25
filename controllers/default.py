@@ -22,6 +22,9 @@ def about():
 def contact():
     return locals()
 
+def ufp():
+    return locals()
+
 def user():
     """
     exposes:
