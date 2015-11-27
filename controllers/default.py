@@ -25,6 +25,9 @@ def contact():
 def ufp():
     return locals()
 
+def logout():
+    auth.logout(next=URL(c='default', f='index'))
+
 def user():
     """
     exposes:

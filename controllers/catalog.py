@@ -19,6 +19,7 @@ def item_add_location_list():
 
     return locals()
 
+@auth.requires_login()
 def add_location():
     item_id = request.args(0) or redirect(UR(c='default', f='index'))
     item = db(db.item.id == item_id).select()
