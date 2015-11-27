@@ -25,6 +25,11 @@
         </a>
     </li>
     <li role="presentation">
+        <a href="#recipies" aria-controls="culinary_uses" role="tab" data-toggle="tab">
+            {{=T("Recipies")}}
+        </a>
+    </li>
+    <li role="presentation">
         <a href="#nutritional_information" aria-controls="nutritional_information" role="tab" data-toggle="tab">
             {{=T("Nutritional Information")}}
         </a>
@@ -49,6 +54,12 @@
     <div role="tabpanel" class="tab-pane" id="culinary_uses">
         {{=XML(i.item_culinary_use)}}
     </div>
+    <div role="tabpanel" class="tab-pane" id="recipies">
+        <a href="{{=URL(c='garden', f='add_recipe', args=i.id)}}" class="btn btn-info">
+            {{=T('Add a recipe')}}
+        </a>
+    </div>
+
     <div role="tabpanel" class="tab-pane" id="nutritional_information">
         {{=XML(i.item_nutritional_info)}}
     </div>
