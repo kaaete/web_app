@@ -64,10 +64,11 @@
         google.maps.event.addDomListener(window, 'load', initMap);
     </script>
 
+
     <!-- map catalog -->
     <div class="map">
         <div id="map_container"></div>
-        <div class="form-map form-inline col-lg-4">
+        <div class="form-map form-inline">
             <form>
                 <input type="text" placeholder="{{=T('Type a location, like: New York, NY')}}" class="form-control address" id="search_location">
                 <button class="btn btn-default find" type="button">{{=T("Go")}}</button>
@@ -75,17 +76,15 @@
                     <input name="lat" type="text" id="find_lat">
                     <input name="lng" type="text" id="find_lng">
                 </div>
-
-
             </form>
         </div>
         <div class="btn-map">
-            <a href="{{=URL(c='catalog', f='item_add_location_list')}}" class="btn btn-primary btn-map">{{=T('Add a plant location')}}</a>
+            <a href="{{=URL(c='catalog', f='item_add_location_list')}}" class="btn btn-info btn-map">{{=T('Add a plant location')}}</a>
         </div>
     </div>
     <!-- /.map -->
 
-    <div class="container">
+    <div class="container main-section">
       {{include}}
 
     {{include 'footer.html'}}

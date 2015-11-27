@@ -1,0 +1,51 @@
+/* KAAETE STYLES
+-------------------------------------------------- */
+
+/* General styles*/
+body, p, h1, h2, h3, h4 {color: #332211;}
+a, a:hover, a:active, a:focus {color: #8bb34d;} 
+.btn-warning:active:hover, .btn-warning.active:hover, .open > .dropdown-toggle.btn-warning:hover, .btn-warning:active:focus, .btn-warning.active:focus, .open > .dropdown-toggle.btn-warning:focus, .btn-warning.focus:active, .btn-warning.active.focus, .open > .dropdown-toggle.btn-warning.focus {background-color: #e88e00; border-color: #e88e00;}
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:focus {background-color: #5d802f; border-color: #5d802f;}
+.btn-primary:active:hover, .btn-primary.active:hover, .open > .dropdown-toggle.btn-primary:hover, .btn-primary:active:focus, .btn-primary.active:focus, .open > .dropdown-toggle.btn-primary:focus, .btn-primary.focus:active, .btn-primary.active.focus, .open > .dropdown-toggle.btn-primary.focus {background-color: #465C2A; border-color: #465C2A;}
+.btn-default {background-color: #bbee44; border-color: #bbee44;} 
+.btn-default:hover, .btn-default:active, .btn-default:focus, .btn-default:active:hover, .btn-default.active:hover, .open > .dropdown-toggle.btn-default:hover, .btn-default:active:focus, .btn-default.active:focus, .open > .dropdown-toggle.btn-default:focus, .btn-default.focus:active, .btn-default.active.focus, .open > .dropdown-toggle.btn-default.focus {background-color: #aacc44; border-color: #aacc44;} 
+.form-control {color: #332211;}
+.form-control:focus {border-color: #a2b2c3;}
+div.thumbnail {border: 2px solid #efefef; padding: 10px; height: 585px;}
+h1.title {border-bottom: 2px solid #dfdfdf; padding-bottom: 10px; margin-top: 0;}
+.page-header {margin-bottom: 0px; margin-top: 20px;}
+
+/* Header */
+header {box-shadow: none;}
+nav.navbar-default {background-color: #96c154;}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {background-color: #8bb34d;}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {background-color: #8bb34d; color: #fff;}
+.navbar-header {margin-left: 20px;}
+.navbar-brand {position: relative; display: inline-block;}
+.navbar-default .navbar-brand .badge {position: absolute; bottom: 30px; right: 15px; color: #f39c12;}
+img.logo {width: 80%; margin-top: -15px;}
+.navbar-default .navbar-toggle, .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:active,  .navbar-default .navbar-toggle:focus {background-color: #8bb34d; border-color: #8bb34d;}
+
+/* Map */
+#search_location {width: 77%; float: left;}
+.form-map button {width: 20%; float: left; margin-left: 4px;}
+
+/* Home */
+.img-wrapper img {height: 150px; width: 100%;}
+.col-lg-4 img {width: 100%; height: 280px;}
+.title-home {margin-bottom: 24px;}
+
+/*Plant page */
+div.tab-content {border: 1px solid #dfdfdf; border-top: none; margin-bottom: 20px; padding: 15px;}
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {border-color: #dfdfdf; border-bottom-color: transparent; color: #8bb34d;}
+.nav-tabs {border-color: #dfdfdf;}
+.nav-tabs a {color: #443300;}
+.nav > li > a:hover, .nav > li > a:focus {background: #f9f9f9;}
+
+/*Other pages */
+.section-about {margin-bottom: 25px;}
+.section-project {min-height: 370px;}
+
+
+/*Footer */
+footer {position: relative; bottom: -100px; margin-bottom: 10px;}
