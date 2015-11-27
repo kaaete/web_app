@@ -70,11 +70,23 @@
     <!-- map catalog -->
     <div class="map-catalog">
         <div id="map_catalog_container"></div>
+        <div class="form-map form-inline">
+            <form>
+                <input type="text" placeholder="{{=T('Type a location, like: New York, NY')}}" class="form-control address" id="search_location">
+                <button class="btn btn-default find" type="button">{{=T("Go")}}</button>
+                <div class="hidden">
+                    <input name="lat" type="text" id="find_lat">
+                    <input name="lng" type="text" id="find_lng">
+                </div>
+            </form>
+        </div>
         <div class="btn-map-catalog">
-            <a href="{{=URL(c='catalog', f='add_location', args=request.args(0))}}" class="btn btn-primary btn-map">{{=T('Add a plant location')}}</a>
+            <a href="{{=URL(c='catalog', f='add_location', args=request.args(0))}}" class="btn btn-info btn-map">{{=T('Add a plant location')}}</a>
         </div>
     </div>
     <!-- /.map -->
+
+
 
     <div class="container">
       {{include}}

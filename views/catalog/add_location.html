@@ -2,22 +2,17 @@
 
 {{for i in item:}}
 <div class="page-header">
-  <h1>{{=T("Add Plant Location")}} <small>{{=T("Type the address in the box and upload a photo")}}</small></h1>
+  <h1 class="title">{{=T("Add Plant Location")}}</h1>
 </div>
 
 <div>
 
+  <p>{{=T("Type the address in the box and upload a photo")}}</p>
   <!-- Nav tabs -->
-  <ul class="nav nav-tabs" role="tablist">
-    <li role="presentation" class="active">
-        <a><h3>{{=i.item_name}} <small>{{=i.item_popular_name}}</small></h3></a>
-    </li>
 
-  </ul>
+        <h3>{{=i.item_name}} <small>{{=i.item_popular_name}}</small></h3>
 
-  <!-- Tab panes -->
-  <div class="tab-content">
-    <div role="tabpanel" class="tab-pane active" id="description">
+  <div>
         <div class="row">
             <div class="col-lg-4">
                 <img src="{{=URL(c='default', f='download', args=i.item_image)}}" alt="{{=i.item_name}}">
@@ -27,6 +22,9 @@
                     <p>
                         <input class="form-control" type="text" name="address" id="address" placeholder="{{=T('Type the address')}}" required>
                     </p>
+                    <div id="add_point_map">
+
+                </div>
                     <p>
                         <input type="file" name="photo" id="photo">
                     </p>
@@ -52,13 +50,10 @@
                     </div>
                     {{=form.hidden_fields()}}
                 </form>
-                <div id="add_point_map">
-
-                </div>
+                
             </div>
         </div>
-    </div>
-
+    
   </div>
 
 </div>

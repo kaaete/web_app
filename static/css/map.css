@@ -11,27 +11,28 @@ body {
 /* BTN BAR
 -------------------------------------------------- */
 .btn-map{
-  margin-top: -110px;
-  z-index: 9999;
+  /*  z-index: 9999;*/
   position: absolute;
-  margin-left: 425px;
+  right: 10%;
+  top: 115px;
 }
 
 .btn-map-catalog{
-  margin-top: 10px;
-  z-index: 9999;
+  /*margin-top: 10px;*/
   position: absolute;
-  margin-left: 425px;
+  right: 10%;
+  top: 115px;
 }
 
 
 .form-map{
-  margin-top: -310px;
-  z-index: 9998;
+  top: 100px;
+  /*z-index: 9998;*/
   position: absolute;
-  margin-left: 850px;
-  background-color: #F39C12;
-  padding: 15px;
+  right: 10%;
+  background-color: #fff;
+  padding: 25px;
+  width: 400px;
 }
 
 /* CUSTOMIZE THE NAVBAR
@@ -67,8 +68,9 @@ body {
 .map {
   height: 400px;
   background-color: #333;
-  margin-bottom: 60px;
-  margin-top: 65px;
+  margin-bottom: 30px;
+  margin-top: 62px;
+  position: relative;
 }
 
 
@@ -84,8 +86,9 @@ body {
 .map-catalog {
   height: 350px;
   background-color: #333;
-  margin-bottom: 60px;
-  margin-top: 65px;
+  margin-bottom: 30px;
+  margin-top: 62px;
+  position: relative;
 
 }
 
@@ -168,7 +171,7 @@ body {
     padding-left: 0;
   }
 
-  /* The navbar becomes detached from the top, so we round the corners */
+  /* The navbar becomes detached from the top, so we round the corners 
   .navbar-wrapper .navbar {
     border-radius: 4px;
   }
