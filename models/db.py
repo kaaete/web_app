@@ -61,6 +61,13 @@ crud = Crud(db)
 ## create all tables needed by auth if not custom tables
 auth.define_tables(username=False, signature=False)
 
+import urllib
+
+def Hidden(*a,**b):
+    b["writable"]=b["readable"]=False
+    return Field(*a,**b)
+
+
 ## configure email
 mail = auth.settings.mailer
 mail.settings.server = 'logging' if request.is_local else myconf.take('smtp.server')
@@ -127,9 +134,20 @@ db.define_table("item_location",
 
 db.define_table("recipe",
     Field("item_id", "reference item"),
+    Field("recipe_title"),
     Field("recipe_content", "text"),
     Field("recipe_image", "upload"),
-    Field("recipe_like"),
-    Field("recipe_dislike"),
+    Hidden("recipe_likes", "integer"),
+    Hidden("recipe_dislikes", "integer"),
+    Hidden("recipe_views", "integer"),
+    Hidden("recipe_time"),
+    Hidden("recipe_difficulty"),
+    Hidden("recipe_yield"),
+    auth.signature
+    )
+
+db.define_table("recipe_item",
+    Field("recipe_id", "reference recipe"),
+    Field("item_title"),
     auth.signature
     )

@@ -29,14 +29,17 @@
 
        </div><!--/col-3-->
       <div class="col-sm-9">
-
           <ul class="nav nav-tabs" id="myTab">
+            {{if auth.has_membership('admin'):}}
             <li class="active"><a href="#plants" data-toggle="tab">{{=T("Your Plants")}}</a></li>
             <li><a href="#points" data-toggle="tab">{{=T("Your Points")}}</a></li>
+            {{else:}}
+            <li class="active"><a href="#points" data-toggle="tab">{{=T("Your Map Points")}}</a></li>
+            {{pass}}
             <li><a href="#recipies" data-toggle="tab">{{=T("Your Recipies")}}</a></li>
           </ul>
-
           <div class="tab-content">
+           {{if auth.has_membership('admin'):}}
             <div class="tab-pane active" id="plants">
             <a href="{{=URL(c='garden', f='add_item')}}" class="btn btn-primary" style="float: right;">{{=T("Add new plant")}}</a>
 
@@ -55,12 +58,30 @@
                   </tbody>
                 </table>
               </div>
-
              </div><!--/tab-pane-->
+             {{pass}}
              <div class="tab-pane" id="poins">
 
              </div><!--/tab-pane-->
              <div class="tab-pane" id="recipies">
+                <a href="{{=URL(c='garden', f='add_recipe_list')}}" class="btn btn-info">
+                    {{=T('Add a recipe')}}
+                </a>
+                <table class="table table-striped table-responsive">
+                  <thead>
+                    <th>{{T("Recipe")}}</th>
+                    <th colspan="2">{{T("Action")}}</th>
+                  </thead>
+                  <tbody>
+                    {{for r in recipies:}}
+                      <tr>
+                        <td>{{=r.recipe_title}}</td>
+                        <td>Edit</td>
+                        <td>View</td>
+                      </tr>
+                    {{pass}}
+                  </tbody>
+                </table>
              </div>
 
               </div><!--/tab-pane-->
