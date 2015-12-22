@@ -41,11 +41,12 @@ div.flash.alert {
     display: none;
     position: fixed;
     top: 70px;
-    right: 75px;
+    right: 131px;
     cursor: pointer;
     z-index: 1000;
-    background-color: #f9edbe;
-    border-color: #f0c36d;
+    background-color: #F39C12;
+    border-color: rgb(200, 127, 10);
+    color: rgb(255, 255, 255);
 }
 .w2p-toolbar-hidden {
     margin: 10px;

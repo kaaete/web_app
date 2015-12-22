@@ -75,7 +75,7 @@
               </li>
             {{else:}}
               <li class="btn-login">
-                <a href="">{{=T("Sign Up")}}</a>
+                <a href="{{=URL(c='user', f='register')}}">{{=T("Sign Up")}}</a>
               </li>
               <li class="btn-login">
                 <a href="{{=URL(c='garden', f='index')}}">
@@ -89,3 +89,6 @@
       </nav>
     </header>
     <div class="flash alert alert-dismissable">{{=response.flash or ''}}</div>
+
+
+          

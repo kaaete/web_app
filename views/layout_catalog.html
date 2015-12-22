@@ -5,7 +5,7 @@
 
           map = new google.maps.Map(document.getElementById('map_catalog_container'), {
             center: {lat: -30.0196384, lng: -51.1777252},
-            zoom: 13,
+            zoom: 12,
             mapTypeId: google.maps.MapTypeId.ROADMAP,
             mapTypeControl: false,
             scaleControl: false,
@@ -81,13 +81,16 @@
             </form>
         </div>
         <div class="btn-map-catalog">
-            <a href="{{=URL(c='catalog', f='add_location', args=request.args(0))}}" class="btn btn-info btn-map">{{=T('Add a plant location')}}</a>
+            <a href="{{=URL(c='catalog', f='add_location', args=[request.args(0), request.args(1)])}}" class="btn btn-info btn-map">
+              <strong>{{=T('Colaborative map. ')}}</strong>
+              <u>{{=T('Click ')}}</u>
+              {{=T(' and add a ')}} 
+              <strong>{{=request.args(1).replace("-", " ").title()}}</strong>
+              {{=T(' location')}}
+            </a>
         </div>
     </div>
     <!-- /.map -->
-
-
-
     <div class="container">
       {{include}}
 

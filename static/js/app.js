@@ -13,7 +13,21 @@ $(function () {
     //add poit geolocation form
     $("#address").geocomplete({
         map: "#add_point_map",
-        details: "form"
+        details: "form",
+        location: [-30.037057, -51.219492],
+        markerOptions: {
+          draggable: false,
+        }
+    });
+
+    //edit poit geolocation form
+    $("#edit_address").geocomplete({
+        map: "#edit_point_map",
+        details: "form",
+        location: edit_address,
+        markerOptions: {
+          draggable: false,
+        }
     });
 
 })

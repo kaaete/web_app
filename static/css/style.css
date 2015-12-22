@@ -11,7 +11,7 @@ a, a:hover, a:active, a:focus {color: #8bb34d;}
 .btn-default:hover, .btn-default:active, .btn-default:focus, .btn-default:active:hover, .btn-default.active:hover, .open > .dropdown-toggle.btn-default:hover, .btn-default:active:focus, .btn-default.active:focus, .open > .dropdown-toggle.btn-default:focus, .btn-default.focus:active, .btn-default.active.focus, .open > .dropdown-toggle.btn-default.focus {background-color: #aacc44; border-color: #aacc44;}
 .form-control {color: #332211;}
 .form-control:focus {border-color: #a2b2c3;}
-div.thumbnail {border: 2px solid #efefef; padding: 10px; height: 585px;}
+div.thumbnail {border: 2px solid #efefef; padding: 10px; height: 530px;}
 h1.title {border-bottom: 2px solid #dfdfdf; padding-bottom: 10px; margin-top: 0;}
 .page-header {margin-bottom: 0px; margin-top: 20px;}
 
@@ -32,11 +32,18 @@ img.logo {width: 80%; margin-top: -15px;}
 
 /* Home */
 .img-wrapper img {height: 150px; width: 100%;}
-.col-lg-4 img {width: 100%; height: 280px;}
+.col-lg-3 img {width: 100%; height: 280px;}
 .title-home {margin-bottom: 24px;}
 .index-list{font-size: 18px; font-weight: bold; }
 .index-list-sub{font-size: 15px; font-style: italic;}
+.index-list-sub-bold{font-size: 15px; font-style: italic; font-weight: bold;}
 
+
+
+/* Location list */
+.img-wrapper img {height: 150px; width: 100%;}
+.location-list{font-size: 14px; font-weight: bold; }
+.location-box div.thumbnail {height: 300px;}
 
 /*Plant page */
 div.tab-content {border: 1px solid #dfdfdf; border-top: none; margin-bottom: 20px; padding: 15px;}
@@ -44,6 +51,12 @@ div.tab-content {border: 1px solid #dfdfdf; border-top: none; margin-bottom: 20p
 .nav-tabs {border-color: #dfdfdf;}
 .nav-tabs a {color: #443300;}
 .nav > li > a:hover, .nav > li > a:focus {background: #f9f9f9;}
+.plant-tab div.thumbnail {border: 0px; padding: 10px;}
+
+/*add location page */
+.label-form-point{
+	margin-top: 15px;
+}
 
 /*Other pages */
 .section-about {margin-bottom: 25px;}
