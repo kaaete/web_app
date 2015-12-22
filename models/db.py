@@ -6,6 +6,7 @@
 
 ## app configuration made easy. Look inside private/appconfig.ini
 from gluon.contrib.appconfig import AppConfig
+from images import THUMB 
 
 ## once in production, remove reload=True to gain full speed
 myconf = AppConfig(reload=True)
@@ -122,10 +123,13 @@ db.define_table('item',
     Field('item_culinary_use', 'text'),
     Field('item_nutritional_info', 'text'),
     Field('item_image', 'upload'),
+    Field("item_thumbnail", 'upload'),
     Field('item_slug', compute=lambda row: IS_SLUG()(row.item_popular_name.split(",")[0])[0]),
     Field('item_root_id', "integer", default=0),
     auth.signature
     )
+
+db.item.item_thumbnail.compute = lambda row: THUMB(row.item_image, 361, 244)
 
 db.define_table("item_location",
     Field("item_id", "reference item"),
