@@ -4,7 +4,7 @@
         function initMap() {
           map = new google.maps.Map(document.getElementById('map_container'), {
             center: {lat: -30.0196384, lng: -51.1777252},
-            zoom: 13,
+            zoom: 12,
             mapTypeId: google.maps.MapTypeId.ROADMAP,
             mapTypeControl: false,
             scaleControl: false,
@@ -36,6 +36,7 @@
                           </strong> <br/><strong><i>"+popular_name+" \
                           </i></strong><br><i>" + address+"\
                           </i><br>"+comment+" \
+                          <p><strong><a href='"+link+"'>Ver mais</a></strong></p>\
                           </div> \
                           </div>";
               var marker = new google.maps.Marker({
@@ -79,7 +80,11 @@
             </form>
         </div>
         <div class="btn-map">
-            <a href="{{=URL(c='catalog', f='item_add_location_list')}}" class="btn btn-info btn-map">{{=T('Add a plant location')}}</a>
+            <a href="{{=URL(c='catalog', f='item_add_location_list')}}" class="btn btn-info btn-map">
+              <strong>{{=T('Colaborative map. ')}}</strong>
+              <u>{{=T('Click ')}}</u>
+              {{=T(' and add a plant location')}}
+            </a>
         </div>
     </div>
     <!-- /.map -->

@@ -2,7 +2,7 @@
 
 {{for i in item:}}
 <div class="page-header">
-    <h1 class="title">{{=T("Add Plant Location")}}</h1>
+    <h1 class="title">{{=T("Edit Plant Location")}}</h1>
 </div>
 <div>
     <h3>{{=i.item_popular_name.split(',')[0]}} <small> {{=i.item_name}} </small></h3>
@@ -15,11 +15,11 @@
                 <form enctype="multipart/form-data" method="post">
                     <div class="form-group">
                         <label for="address">
-                            {{=T("Type the address in the box to find a location")}}:
+                            {{=T("Type the new address in the box to find a location")}}:
                         </label>
-                        <input class="form-control" type="text" name="address" id="address" placeholder="{{=T('Type the address')}}" required>
+                        <input class="form-control" type="text" name="address" id="edit_address" placeholder="{{=T('Type the address')}}" required>
                     </div>
-                    <div id="add_point_map"></div>
+                    <div id="edit_point_map"></div>
         
                     <div>
                         <label for="photo" class="label-form-point">

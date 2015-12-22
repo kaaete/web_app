@@ -1,17 +1,10 @@
 # -*- coding: utf-8 -*-
-# this file is released under public domain and you can use without limitations
-
-#########################################################################
-## This is a sample controller
-## - index is the default action of any application
-## - user is required for authentication and authorization
-## - download is for downloading files uploaded in the db (does streaming)
-#########################################################################
 
 @auth.requires_login()
 def index():
     itens = db(db.item.created_by == auth.user.id).select()
     recipies = db(db.recipe.created_by == auth.user.id).select()
+    points = db((db.item_location.created_by == auth.user.id)&(db.item.id == db.item_location.item_id)).select()
 
     return locals()
 

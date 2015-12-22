@@ -79,6 +79,11 @@ body {
 
 }
 
+#edit_point_map{
+  height: 300px;
+
+}
+
 #map_container{
   height: 400px;
 }

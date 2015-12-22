@@ -6,18 +6,30 @@
 
 <div class="row">
   <div class="col-md-6">
-    <form role="form" action="" method="post">   
+  {{if not send:}}
+  {{else:}}
+    {{if not success:}}
+    <p class="alert alert-danger">
+      {{=T("There was an error submitting your form. Try again later.")}}
+    </p>
+    {{else:}}
+    <p class="alert alert-success">
+      {{=T("Thanks for your message. We will reply soon.")}}
+    </p>
+    {{pass}}
+  {{pass}}
+    <form enctype="multipart/form-data" method="post" role="form">   
         <div class="form-group">
           <label for="InputName">{{=T("Your name")}}:</label>
-          <input type="text" class="form-control" name="InputName" id="InputName" placeholder="Enter Name" required>
+          <input type="text" class="form-control" name="name" id="name" placeholder="{{=T('Enter Your Name')}}" required>
         </div>
         <div class="form-group">
           <label for="InputEmail">{{=T("Your e-mail")}}:</label>
-          <input type="email" class="form-control" id="InputEmail" name="InputEmail" placeholder="Enter Email" required>
+          <input type="email" class="form-control" id="email" name="email" placeholder="{{=T('Enter Your Email')}}" required>
         </div>
         <div class="form-group">
           <label for="InputMessage">{{=T("Message")}}:</label>        
-            <textarea name="InputMessage" id="InputMessage" class="form-control" rows="5" required></textarea>
+            <textarea name="message" id="message" class="form-control" rows="5" required></textarea>
         </div>
         <input type="submit" name="submit" id="submit" value="{{=T('Submit')}}" class="btn">
     </form>

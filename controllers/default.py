@@ -1,16 +1,7 @@
 # -*- coding: utf-8 -*-
-# this file is released under public domain and you can use without limitations
-
-#########################################################################
-## This is a sample controller
-## - index is the default action of any application
-## - user is required for authentication and authorization
-## - download is for downloading files uploaded in the db (does streaming)
-#########################################################################
 
 def index():
     itens = db(db.item.id > 0).select()
-
     return locals()
 
 def team():
@@ -20,9 +11,37 @@ def about():
     return locals()
 
 def contact():
+    send = False
+    if request.post_vars:
+        send = True
+        name = request.post_vars.name
+        email = request.post_vars.email
+        message = request.post_vars.message
+
+        subject = T("Contact received")
+        content = """<html>
+            <strong>"""+T("Name")+""":</strong>"""+name+"""<br>
+            <strong>"""+T("Email")+""":</strong>"""+email+"""<br>
+            <strong>"""+T("Message")+""":</strong>"""+str(message)+"""<br>
+        </html>"""
+
+        send_mail = mail.send(myconf.take('smtp.sender'),
+            subject,
+            content,
+            reply_to = email
+            )
+        
+        if not send_mail:
+            success = False
+        else:
+            success = True
+
     return locals()
 
-def ufp():
+def nus():
+    return locals()
+
+def error():
     return locals()
 
 def logout():
