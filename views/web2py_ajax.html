@@ -7,8 +7,10 @@
     var ajax_error_500 = '{{=T.M('An error occured, please [[reload %s]] the page') % URL(args=request.args, vars=request.get_vars) }}'
     //get point addres to edit location form
     {{if response.address:}}
-    	var edit_address = "{{=response.address}}"
-    {{pass}} 
+    	var edit_address = "{{=response.address}}";
+    {{else:}}
+    	var edit_address = [-30.037057, -51.219492];
+    {{pass}}
 
     //--></script>
 {{

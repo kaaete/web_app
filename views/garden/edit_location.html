@@ -1,23 +1,43 @@
 {{extend 'layout_page.html'}}
 
-{{for i in item:}}
 <div class="page-header">
-    <h1 class="title">{{=T("Edit Plant Location")}}</h1>
+  <h1 class="title">{{=T("Change Point Location")}}</h1>
 </div>
-<div>
-    <h3>{{=i.item_popular_name}} <small> {{=i.item_name}} </small></h3>
-    <div>
-        <div class="row plant">
-            <div class="col-lg-4 thumbnail">
-                <img src="{{=URL(c='default', f='download', args=i.item_thumbnail)}}" alt="{{=i.item_name}}">
-            </div>
-            <div class="col-lg-8">
+
+<div class="row">
+  <div class="col-sm-3"><!--left col-->
+      <ul class="list-group menu-profile">
+        <li class="list-group-item text-muted">{{=T("Menu")}}</li>
+        <li class="list-group-item text-right">
+          <span class="pull-left">
+            <a href="{{=URL(c='garden', f='index')}}">{{=T("Back")}}</a>
+          </span> 
+          <i class="glyphicon glyphicon-arrow-left" aria-hidden="true"></i>
+        </li>
+      </ul>
+
+   </div><!--/col-3-->
+  <div class="col-sm-9">
+      <ul class="nav nav-tabs" id="myTab">
+        <li class="active">
+          <a href="#change_location" data-toggle="tab">{{=T("Location Data")}}</a>
+        </li>
+      </ul>
+      <div class="tab-content">
+        <div class="tab-pane active" id="change_location">
+          <h4>{{=T("Current point data and location")}}</h4>
+
+          <p><strong>{{=T("Plant")}}</strong>: {{=plant}}</p>
+          <p><strong>{{=T("Address")}}</strong>: {{=point_address}}</p>
+          <hr>
+          <h4>{{=T("Change the data or location")}}</h4>
+
                 <form enctype="multipart/form-data" method="post">
                     <div class="form-group">
                         <label for="address">
-                            {{=T("Type the new address in the box to find a location")}}:
+                            {{=T("Type the address in the box to find a new location")}}:
                         </label>
-                        <input class="form-control" type="text" name="address" id="edit_address" placeholder="{{=T('Type the address')}}" required>
+                        <input class="form-control" type="text" name="formatted_address" id="new_address" placeholder="{{=T('Type the address')}}" required>
                     </div>
                     <div id="edit_point_map"></div>
         
@@ -31,16 +51,16 @@
                         <label for="photo" class="label-form-point">
                             {{=T("Write a comment")}}:
                         </label>
-                        <textarea class="form-control" name="location_comment" placeholder="{{=T('write a comment')}}" required></textarea>
+                        <textarea class="form-control" name="location_comment" placeholder="{{=T('write a comment')}}" required>{{=comment}}</textarea>
                     </div>
                     <p class="label-form-point">
                         <button type="submit">{{=T("Send")}}</button>
+
                     </p>
                     <div class="hidden">
-                        <input name="item_id" type="text" value="{{=i.id}}">
+                        <input name="item_id" type="text" value="{{=item_id}}">
                         <input name="lat" type="text" value="">
                         <input name="lng" type="text" value="">
-                        <input name="formatted_address" type="text" value="">
                         <input name="street_number" type="text" value="">
                         <input name="postal_code" type="text" value="">
                         <input name="locality" type="text" value="">
@@ -51,8 +71,9 @@
                     </div>
                     {{=form.hidden_fields()}}
                 </form>
-            </div>
-        </div>
-    </div>
-</div>
-{{pass}}
+                    
+        </div><!--/tab-pane-->
+      </div><!--/tab-content-->
+  </div><!--/col-9-->
+</div><!--/row-->
+
