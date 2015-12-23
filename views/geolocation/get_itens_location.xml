@@ -1,18 +1,13 @@
 <markers>
 {{for i in itens:}}
 {{
-    if not i.item_location.photo:
-        item_photo = URL(c='default', f='download', args=i.item.item_image)
-    else:
-        item_photo = URL(c='default', f='download', args=i.item_location.photo)
-    pass
-
-    link = URL(c='catalog', f='detail.html', args=i.item.id)
+    item_photo = URL(c='default', f='download', args=i.item.item_image)
+    link = URL(c='catalog', f='detail.html', args=[i.item.id, i.item.item_slug])
 }}
 <marker
     name="{{=i.item.item_name}}"
     popular_name="{{=i.item.item_popular_name}}"
-    address="{{=i.item_location.address}}"
+    address="{{=i.item_location.formatted_address}}"
     lat="{{=i.item_location.lat}}"
     lng="{{=i.item_location.lng}}"
     comment="{{=i.item_location.location_comment}}"

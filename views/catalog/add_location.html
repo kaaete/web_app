@@ -17,7 +17,7 @@
                         <label for="address">
                             {{=T("Type the address in the box to find a location")}}:
                         </label>
-                        <input class="form-control" type="text" name="address" id="address" placeholder="{{=T('Type the address')}}" required>
+                        <input class="form-control" type="text" name="formatted_address" id="address" placeholder="{{=T('Type the address')}}" required>
                     </div>
                     <div id="add_point_map"></div>
         
@@ -40,7 +40,6 @@
                         <input name="item_id" type="text" value="{{=i.id}}">
                         <input name="lat" type="text" value="">
                         <input name="lng" type="text" value="">
-                        <input name="formatted_address" type="text" value="">
                         <input name="street_number" type="text" value="">
                         <input name="postal_code" type="text" value="">
                         <input name="locality" type="text" value="">

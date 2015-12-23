@@ -21,7 +21,7 @@ $(function () {
     });
 
     //edit poit geolocation form
-    $("#edit_address").geocomplete({
+    $("#new_address").geocomplete({
         map: "#edit_point_map",
         details: "form",
         location: edit_address,

@@ -48,7 +48,6 @@ fields=[
     Hidden("birthday", "date"),
     Hidden("scholarity"),
     Hidden("school"),
-    Hidden("address", "string"),
     Hidden("avatar", "upload"),
     Hidden("lat"),
     Hidden("lng"),
@@ -107,7 +106,7 @@ crud.settings.formstyle = 'divs'
 db.auth_user.last_name.readable = db.auth_user.last_name.writable = False
 db.auth_user.username.readable = db.auth_user.username.writable = False
 db.auth_user.avatar.readable = db.auth_user.avatar.writable = False
-db.auth_user.address.readable = db.auth_user.address.writable = False
+db.auth_user.formatted_address.readable = db.auth_user.formatted_address.writable = False
 
 
 ## after defining tables, uncomment below to enable auditing
@@ -134,8 +133,6 @@ db.item.item_thumbnail.compute = lambda row: THUMB(row.item_image, 361, 244)
 
 db.define_table("item_location",
     Field("item_id", "reference item"),
-    Field("address"),
-    Field("photo", "upload"),
     Field("location_comment", "text"),
     Field("lat"),
     Field("lng"),
