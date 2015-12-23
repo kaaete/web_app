@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 def index():
-    itens = db(db.item.id > 0).select()
+    itens = db(db.item.id > 0).select(orderby=db.item.item_popular_name)
     return locals()
 
 def team():

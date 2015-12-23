@@ -2,7 +2,7 @@
 
 {{for i in item:}}
 <div class="page-header">
-  <h1>{{=i.item_popular_name.split(',')[0]}} <small>({{=i.item_name}})</small></h1>
+  <h1>{{=i.item_popular_name}} <small>({{=i.item_name}})</small></h1>
 </div>
 
 <div>
@@ -34,7 +34,7 @@
                 <img src="{{=URL(c='default', f='download', args=i.item_thumbnail)}}" alt="{{=i.item_name}}">
             </div>
             <div class="col-lg-8">
-                <p>{{=T("Also known as: ")}}{{=i.item_popular_name}}</p>
+                <p>{{=T("Also known as: ")}}{{=i.item_other_popular_name}}</p>
 
                 {{=XML(i.item_description)}}
             </div>
