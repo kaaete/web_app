@@ -10,6 +10,34 @@ def team():
 def about():
     return locals()
 
+def suggest():
+    send = False
+    if request.post_vars:
+        send = True
+        name = request.post_vars.name
+        email = request.post_vars.email
+        plant_name = request.post_vars.plant_name
+
+        subject = T("Suggested plant")
+        content = """<html>
+            <strong>"""+T("Name")+""":</strong>"""+name+"""<br>
+            <strong>"""+T("Email")+""":</strong>"""+email+"""<br>
+            <strong>"""+T("Suggested plant")+""":</strong>"""+str(plant_name)+"""<br>
+        </html>"""
+
+        send_mail = mail.send(myconf.take('smtp.sender'),
+            subject,
+            content,
+            reply_to = email
+            )
+        
+        if not send_mail:
+            success = False
+        else:
+            success = True
+
+    return locals()
+
 def contact():
     send = False
     if request.post_vars:
