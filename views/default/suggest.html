@@ -1,0 +1,40 @@
+{{extend 'layout_page.html'}}
+
+<div class="page-header">
+  <h1 class="title">{{=T("Suggest a Plant")}}</h1>
+</div>
+
+<div class="row">
+<p class="col-md-12">{{=T("Suggest a plant to add in the Ka'a-eté map.")}}</p>
+  <div class="col-md-6">
+  {{if not send:}}
+  {{else:}}
+    {{if not success:}}
+    <p class="alert alert-danger">
+      {{=T("There was an error submitting your form. Try again later.")}}
+    </p>
+    {{else:}}
+    <p class="alert alert-success">
+      {{=T("Thanks for your contribution. We will reply soon.")}}
+    </p>
+    {{pass}}
+  {{pass}}
+    <form enctype="multipart/form-data" method="post" role="form">   
+        <div class="form-group">
+          <label for="name">{{=T("Your name")}}:</label>
+          <input type="text" class="form-control" name="name" id="name" placeholder="{{=T('Enter Your Name')}}" required>
+        </div>
+        <div class="form-group">
+          <label for="email">{{=T("Your e-mail")}}:</label>
+          <input type="email" class="form-control" id="email" name="email" placeholder="{{=T('Enter Your Email')}}" required>
+        </div>
+        <div class="form-group">
+          <label for="plant_name">{{=T("Enter the scientific name and common names of the plant")}}:</label>        
+            <input name="plant_name" id="plant_name" class="form-control">
+        </div>
+        <input type="submit" name="submit" id="submit" value="{{=T('Submit')}}" class="btn">
+    </form>
+  </div>
+  </div>
+
+
