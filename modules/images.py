@@ -34,7 +34,7 @@ def THUMB(image, nx=260, ny=260, gae=False, name='thumb'):
             img.thumbnail((nx, ny), Image.ANTIALIAS)
             root, ext = os.path.splitext(image)
             thumb = '%s_%s%s' % (root, name, ext)
-            img.save(request.folder + 'uploads/' + thumb, 'JPEG', quality=80)
+            img.save(request.folder + 'uploads/' + thumb, 'JPEG', quality=100)
             return thumb
         else:
             return image
