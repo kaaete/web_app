@@ -26,7 +26,9 @@
         </li>
         <li class="list-group-item text-right">
           <span class="pull-left">
-            <a>{{=T("Delete account")}}</a>
+            <a data-toggle="modal" data-target="#delete_account">
+              {{=T("Delete account")}}
+            </a>
           </span>
           <i class="glyphicon glyphicon-remove" aria-hidden="true"></i>
         </li>
@@ -157,3 +159,27 @@
     </div><!--/col-9-->
 </div><!--/row-->
 
+<div class="modal fade" id="delete_account" tabindex="-1" role="dialog" aria-labelledby="add_item">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">{{=T("Delete account")}}</h4>
+      </div>
+      <div class="modal-body">
+      <div class="row">         
+        <p class="alert alert-danger">
+          <strong>{{=T("Warning!! This operation is irreversible.")}}</strong>
+        </p>
+        <p>
+          {{=T("Your personal data will be excluded, but the NUS points are kept in the system without your informations")}}
+        </p>
+      </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">{{=T("Cancel")}}</button>
+        <a href="{{=URL(c='user', f='delete_account')}}">{{=T("Delete account")}}</a>
+      </div>
+    </div>
+  </div>
+</div>

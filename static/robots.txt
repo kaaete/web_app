@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /app/garden
+Disallow: /app/user
+Disallow: /app/geolocation
+Disallow: /app/catalog/item_add_location_list
+Disallow: /app/appadmin
+Disallow: /admin

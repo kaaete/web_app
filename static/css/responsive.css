@@ -1,0 +1,31 @@
+/* KAAETE RESPONSIVE STYLES
+-------------------------------------------------- */
+
+
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+.img-wrapper img {
+    height: 165px;
+    width: 100%;
+}
+
+.col-lg-3{
+	width: 33%;
+	float: left;
+}
+ 
+.col-lg-4{
+	width: 40%;
+	float: left;
+}
+
+.col-lg-6{
+	width: 60%;
+	float: left;
+}
+
+.col-lg-8{
+	width: 60%;
+	float: left;
+}
+
+}
