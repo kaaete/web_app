@@ -8,11 +8,13 @@ def index():
 
     return locals()
 
+@auth.requires_membership("admin")
 def edit_item():
     item_id = request.args(0) or redirect(URL(c='garden', f='index'))
     form = crud.update(db.item, item_id, next=URL(c='garden', f='index'))
     return locals()
 
+@auth.requires_membership("admin")
 def add_item():
     form = crud.create(db.item, next=URL(c='garden', f='index'))
     return locals()
@@ -23,6 +25,7 @@ def detail():
 
     return locals()
 
+@auth.requires_membership("admin")
 def add_recipe():
     form = crud.create(db.recipe, next=URL(c='garden', f='index'), messages=T("Recipie add successfully"))
     return locals()
