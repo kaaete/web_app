@@ -1,12 +1,13 @@
 $(function () {
     //index geolocation form
     $("#search_location").geocomplete({
-        details: "form"
+        details: "form",
     });
 
     //search address
     $("button.find").click(function(){
       map.setCenter(new google.maps.LatLng( $("#find_lat").val(), $("#find_lng").val()));
+      map.setZoom(16);
     });
 
 
@@ -39,7 +40,13 @@ function bindInfoWindow(marker, map, infoWindow, html) {
     infoWindow.setContent(html);
     infoWindow.open(map, marker);
     map.setCenter(marker.getPosition());
+    $(".btn-map").css("margin-top","-10px");
+    $(".form-map").css("margin-top","160px");
+  });
 
+  google.maps.event.addListener(infoWindow,'closeclick',function(){
+      $(".btn-map").css("margin-top","0px");
+      $(".form-map").css("margin-top","0px");
   });
 }
 

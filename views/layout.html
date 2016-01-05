@@ -4,7 +4,7 @@
         function initMap() {
           map = new google.maps.Map(document.getElementById('map_container'), {
             center: {lat: -30.0196384, lng: -51.1777252},
-            zoom: 12,
+            zoom: 14,
             mapTypeId: google.maps.MapTypeId.ROADMAP,
             mapTypeControl: false,
             scaleControl: false,
@@ -71,6 +71,7 @@
         <div id="map_container"></div>
         <div class="form-map form-inline">
             <form>
+                <label>Digite um endereço para pesquisar</label>
                 <input type="text" placeholder="{{=T('Type a location, like: New York, NY')}}" class="form-control address" id="search_location">
                 <button class="btn btn-default find" type="button">{{=T("Go")}}</button>
                 <div class="hidden">
