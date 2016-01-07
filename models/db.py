@@ -88,7 +88,7 @@ auth.settings.reset_password_next = URL(c='garden', f='index')
 auth.settings.retrieve_password_next = URL(c='garden', f='index')
 
 auth.messages.email_sent = 'Verifique seu email para confirmar a solicitação.'
-auth.messages.reset_password = T('Clique no link http://')+request.env.http_host+URL(r=request,c='default',f='user',args=['reset_password'])+T('/%(key)s para recuperar sua senha')
+auth.messages.reset_password = T('Clique no link http://')+request.env.http_host+URL(r=request,c='user',f='new_password',args=['reset_password'])+T('/%(key)s para recuperar sua senha')
 auth.messages.password_changed = 'Senha alterada com sucesso.'
 
 auth.settings.change_password_next = URL(c='default', f='index')
