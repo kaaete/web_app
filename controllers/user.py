@@ -18,6 +18,14 @@ def change_password():
     form = auth.change_password(next=URL(c='garden', f='index'))
     return locals()
 
+def new_password():
+    form = auth(next=URL(c='garden', f='index'))
+    form.element(_name='new_password')['_autofocus'] = "autofocus"
+    form.element(_name='new_password')['_class'] = "form-control"
+    form.element(_name='new_password2')['_class'] = "form-control"
+
+    return locals()
+
 @auth.requires_login()
 def delete_account():
 	import time
