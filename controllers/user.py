@@ -19,7 +19,7 @@ def change_password():
     return locals()
 
 def new_password():
-    form = auth(next=URL(c='garden', f='index'))
+    form = auth()
     form.element(_name='new_password')['_autofocus'] = "autofocus"
     form.element(_name='new_password')['_class'] = "form-control"
     form.element(_name='new_password2')['_class'] = "form-control"
