@@ -65,3 +65,10 @@ div.tab-content {border: 1px solid #dfdfdf; border-top: none; margin-bottom: 20p
 
 /*Footer */
 footer {position: relative; bottom: -100px; margin-bottom: 10px;}
+
+/* Separador - é necessário pelo menos um &nbsp; dentro da div */
+.separador {
+	padding-top:1em;
+	padding-bottom:1em;
+}
+
